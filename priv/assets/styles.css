@@ -1,0 +1,462 @@
+/* Page level styles */
+
+*[data-event]>* {
+  /* This is what makes the click through elements work */
+  pointer-events: none;
+}
+
+
+:root {
+  --gold: #ac9100;
+  --shiny-gold: gold;
+  --light: #ffaff3;
+  --dark: #2f2f2f;
+  --light: #f1f3e5;
+  --dark: #456d69;
+  --gold: #ac7f00;
+  --shiny-gold: #d39704;
+  --light: #ecede6;
+  --dark: #5c4255;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--light);
+}
+
+/* Home page */
+
+.lobby .control-panel {
+  height: 5vh;
+}
+
+.lobby .dashboard-card {
+  width: 25%;
+  height: 25vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  font-size: 1.5em;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.lobby .dashboard-card .preview {
+  height: 80%;
+  padding: 1vh;
+}
+
+/* Game page */
+
+.player-info {
+  font-family: sans-serif;
+  height: 10vh;
+  font-size: 4vh;
+}
+
+.play {
+  height: 90vh;
+}
+
+.board {
+  background-color: var(--dark);
+  border-radius: 2vh;
+  padding: 2vh;
+}
+
+.popup {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  font-size: 5vh;
+}
+
+.final-score {
+  border-radius: 0.5vh;
+  text-align: center;
+}
+
+.final-score h1,
+.final-score h2,
+.final-score h3 {
+  margin: 0;
+}
+
+.final-score .cheatsheet {
+  font-size: 1.5vh;
+  width: 25vh;
+  border-collapse: collapse;
+}
+
+.final-score .cheatsheet th,
+.final-score .cheatsheet td {
+  border: 0.1vh solid var(--gray);
+}
+
+.final-score .cheatsheet tr {
+  height: 3.5vh;
+  text-align: center;
+}
+
+.final-score .score-winner {
+  padding: 1vh 0 1vh 0;
+}
+
+.final-score .score-group {
+  display: flex;
+  font-size: 2.25vh;
+  padding: 2vh 0 2vh 0;
+  background-color: var(--light);
+}
+
+.final-score .score-group>div {
+  padding: 0 2vh 0 2vh;
+}
+
+.final-score .score-group table {
+  width: 100%;
+}
+
+.final-score .score-group table td {
+  padding: 0.5vh 1.0vh;
+}
+
+.final-score .score-group table td:nth-child(1) {
+  text-align: left;
+  font-size: 3vh;
+}
+
+.final-score .score-group table td:nth-child(2) {
+  text-align: right;
+  font-size: 3.25vh;
+}
+
+.final-score .score-group table td div:nth-child(2) {
+  text-align: left;
+  font-size: 1.75vh;
+}
+
+.scores {
+  display: flex;
+  flex-direction: row;
+}
+
+/* TODO: Adapt exceeding 7.5 vh slots to mobile */
+.scores>.score {
+  height: 2vh;
+  width: 7.5vh;
+  color: var(--light);
+  border-radius: 0.25vh;
+  margin: 0.32vh;
+  padding: 0.4vh;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 0;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 1.25vh;
+  font-family: arial;
+}
+
+.scores.general>.score {
+  justify-content: space-between;
+}
+
+.scores.totals>.score.player-1 {
+  outline: 0.1vh solid var(--dark);
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+.scores.totals>.score.player-2 {
+  outline: 0.1vh solid var(--light);
+  background-color: var(--dark);
+  color: var(--light);
+}
+
+.scores>.score>.formation {
+  color: var(--gold);
+}
+
+.scores>.score>.flank {
+  color: var(--shiny-gold);
+}
+
+.slots {
+  display: flex;
+  flex-direction: row;
+}
+
+/* TODO: Adapt exceeding 7.5 vh slots to mobile */
+.slots .slot {
+  outline: 0.2vh solid var(--gold);
+  position: relative;
+  height: 18.25vh;
+  width: 7.5vh;
+  border-radius: 0.25vh;
+  margin: 0.32vh;
+  padding: 0.4vh;
+}
+
+/* Individual Elements */
+
+/* TODO: Adapt exceeding 7.5 vh slots to mobile */
+.draw-pile {
+  position: relative;
+  height: 10.5vh;
+  width: 7.5vh;
+}
+
+.slot>.card.front {
+  position: absolute;
+}
+
+.player-2.slot>.card:nth-child(1) {
+  bottom: 0.5vh;
+}
+
+.player-2.slot>.card:nth-child(2) {
+  bottom: 4.3vh;
+}
+
+.player-2.slot>.card:nth-child(3) {
+  bottom: 8.1vh;
+}
+
+.player-1.slot>.card:nth-child(1) {
+  top: 0.5vh;
+}
+
+.player-1.slot>.card:nth-child(2) {
+  top: 4.3vh;
+}
+
+.player-1.slot>.card:nth-child(3) {
+  top: 8.1vh;
+}
+
+/* TODO: Adapt exceeding 7.5 vh slots to mobile */
+.card {
+  /* standard size card 3.5in by 2.5in */
+  outline: 0.1vh solid #b5b5b5;
+  height: 10.5vh;
+  width: 7.5vh;
+  border-radius: 0.75vh;
+}
+
+.red {
+  color: #b01818;
+}
+
+.blue {
+  color: #0072aa;
+}
+
+.green {
+  color: #4d8848
+}
+
+.purple {
+  color: #9c5aa2;
+}
+
+.card.front {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #ffffff;
+}
+
+.card.front p {
+  text-align: center;
+  margin: 0;
+}
+
+.card.front .graphic {
+  font-size: 4.5vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.card.front .corner {
+  margin: 0.25em;
+  font-size: 1.5vh;
+  display: flex;
+}
+
+.card.front .corner.upper-left {
+  flex-direction: column;
+}
+
+.card.front .bottom-right {
+  flex-direction: column-reverse;
+}
+
+.card.back {
+  box-shadow: inset 0px 0px 0px 0.5vh #ffffff;
+}
+
+/* took inspiration from https://codepen.io/apo11oCreed/pen/WNEgJE */
+/* and https://gleam.run easter egg :sparkles: */
+.sparkle {
+  outline: 0.1vh solid #b5b5b5;
+  color: #000000;
+  background:
+    repeating-linear-gradient(-30deg,
+      #f9b1be 1em,
+      #f9b1be 2em,
+      #ffd596 2em,
+      #ffd596 3em,
+      #fdffab 3em,
+      #fdffab 4em,
+      #c8ffa7 4em,
+      #c8ffa7 5em,
+      #9ce7ff 5em,
+      #9ce7ff 6em,
+      #dcd2fb 6em,
+      #dcd2fb 7em);
+}
+
+.draw-pile .card {
+  position: absolute;
+  margin: 0vh;
+}
+
+.draw-pile .card:nth-child(1) {
+  bottom: 0vh;
+  right: 0vh;
+}
+
+.draw-pile .card:nth-child(2) {
+  bottom: 0.15vh;
+  right: 0.15vh;
+}
+
+.draw-pile .card:nth-child(3) {
+  bottom: 0.3vh;
+  right: 0.3vh;
+}
+
+.draw-pile .card:nth-child(4) {
+  bottom: 0.45vh;
+  right: 0.45vh;
+}
+
+.draw-pile .card:nth-child(5) {
+  bottom: 0.6vh;
+  right: 0.6vh;
+}
+
+.draw-pile .card:nth-child(6) {
+  bottom: 0.75vh;
+  right: 0.75vh;
+}
+
+.draw-pile .card:nth-child(7) {
+  bottom: 0.9vh;
+  right: 0.9vh;
+}
+
+.draw-pile .card:nth-child(8) {
+  bottom: 1.05vh;
+  right: 1.05vh;
+}
+
+.draw-pile .card:nth-child(9) {
+  bottom: 1.20vh;
+  right: 1.20vh;
+}
+
+.draw-pile .card:nth-child(10) {
+  bottom: 1.35vh;
+  right: 1.35vh;
+}
+
+.draw-pile .card:nth-child(11) {
+  bottom: 1.50vh;
+  right: 1.50vh;
+}
+
+.draw-pile .card:nth-child(12) {
+  bottom: 1.65vh;
+  right: 1.65vh;
+}
+
+.draw-pile .card:nth-child(13) {
+  bottom: 1.8vh;
+  right: 1.8vh;
+}
+
+
+/* Try this */
+.row {
+  display: flex;
+  flex-direction: column;
+}
+
+.column {
+  display: flex;
+  flex-direction: row;
+}
+
+.evenly {
+  justify-content: space-evenly;
+}
+
+.center {
+  justify-content: center;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.s1 {
+  flex: 1 1;
+}
+
+.s2 {
+  flex: 2 2;
+}
+
+.s3 {
+  flex: 3 3;
+}
+
+.s4 {
+  flex: 4 4;
+}
+
+.s5 {
+  flex: 5 5;
+}
+
+.s6 {
+  flex: 6 6;
+}
+
+.s7 {
+  flex: 7 7;
+}
+
+.s8 {
+  flex: 8 8;
+}
+
+.s9 {
+  flex: 9 9;
+}
+
+.s10 {
+  flex: 10 10;
+}
+
+.s11 {
+  flex: 11 11;
+}
+
+.s12 {
+  flex: 12 12;
+}
